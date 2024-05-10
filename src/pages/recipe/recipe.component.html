@@ -1,0 +1,43 @@
+<div class="container-meal">
+  @for (meal of meals; track $index) {
+  <h2 class="container-meal--title">{{ meal.strMeal }}</h2>
+  <div class="container-meal--content">
+    <div class="container-meal--content_head">
+      <img [src]="meal.strMealThumb" alt="" />
+
+      <div class="tags">
+        <p>
+          <strong [innerHTML]="'Categoria:'"></strong> {{ meal.strCategory }}
+        </p>
+        <p><strong [innerHTML]="'País:'"> </strong> {{ meal.strArea }}</p>
+      </div>
+    </div>
+
+    <div class="container-meal--content__instructions">
+      <h3>Ingredientes</h3>
+
+      <ul>
+        @for (item of getIngredients(meal); track $index) {
+        <li>
+          <span>{{ item.measure }}</span> {{ item.ingredient }}
+        </li>
+        }
+      </ul>
+      <h3>Instrucciones</h3>
+      <p>{{ meal.strInstructions }}</p>
+      <a
+        [href]="meal.strYoutube"
+        target="_blank"
+        class="container-meal--content__instructions_link"
+      >
+        <img
+          src="./../../assets/youtube.png"
+          alt=""
+          width="30px"
+          [innerHTML]=""
+        />Ver Receta en YouTube</a
+      >
+    </div>
+  </div>
+  }
+</div>

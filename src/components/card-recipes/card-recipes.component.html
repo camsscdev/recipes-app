@@ -1,0 +1,13 @@
+<div class="container-cards">
+  @for (recipe of recipes; track $index) {
+
+  <div class="container-cards--card" (click)="viewRecipe(recipe.idMeal)">
+    <div class="container-cards--card__head">
+      <img [src]="recipe.strMealThumb" alt="" />
+      <h2>{{ recipe.strMeal }}</h2>
+      <span>¡A la cocina!</span>
+    </div>
+  </div>
+
+  }
+</div>

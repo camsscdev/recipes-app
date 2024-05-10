@@ -1,6 +1,26 @@
 # RecipesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+Aplicación recetas
+
+## Descripción
+
+Este proyecto es una aplicación web desarrollada en Angular [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6. con fines practicos
+
+## Requisitos Previos
+
+Antes de ejecutar este proyecto, asegúrate de tener instalado Node.js y npm en tu máquina. Puedes descargarlos e instalarlos desde [el sitio web oficial de Node.js](https://nodejs.org/).
+
+## Instalación
+
+Sigue estos pasos para ejecutar este proyecto en tu máquina local:
+
+1. Clona este repositorio en tu máquina local:
+2. Navega al directorio del proyecto:
+3. Instalar las dependencias con el comando `npm install`
+
+## Ejecución
+
+Una vez que hayas instalado las dependencias, puedes ejecutar el proyecto con el siguiente comando `ng serve -o` para que la aplición abra automaticamente;
 
 ## Development server
 

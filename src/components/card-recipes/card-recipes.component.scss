@@ -1,0 +1,65 @@
+@mixin rounded-corners-top($top-left, $top-right) {
+  border-top-left-radius: $top-left;
+  border-top-right-radius: $top-right;
+}
+
+.container-cards {
+  padding: 2rem 1.2rem;
+  display: flex;
+  row-gap: 28px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  &--card {
+    width: calc(33%);
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;
+    @include rounded-corners-top(12px, 87px);
+
+    .container-cards--card__head {
+      position: relative;
+
+      img {
+        width: 100%;
+        @include rounded-corners-top(12px, 87px);
+        position: relative;
+        cursor: pointer;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.5;
+        }
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        opacity: 0;
+      }
+      &:hover span {
+        display: block;
+        opacity: 1;
+        color: rgba(255, 255, 0, 0.856);
+        filter: contrast(1.75);
+        font-size: 26px;
+        text-shadow: 1px 1px 2px #000000;
+        cursor: pointer;
+      }
+    }
+
+    &__head h2 {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .container-cards {
+    flex-direction: column;
+    &--card {
+      width: 100%;
+    }
+  }
+}

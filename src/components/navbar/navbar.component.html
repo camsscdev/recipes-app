@@ -1,0 +1,40 @@
+<nav class="navbar">
+  <h2 class="navbar--title">
+    <a [routerLink]="['/home']">RecipeApp</a>
+  </h2>
+
+  <div class="navbar--input-wrapper">
+    <input
+      type="text"
+      class="navbar--input-wrapper__search"
+      placeholder="¿Qué receta tienes en mente?"
+      [(ngModel)]="nameRecipe"
+      (keyup)="filterLetter($event.target)"
+      (keyup.enter)="searchByName()"
+    />
+
+    <img
+      src="./../../assets/search.svg"
+      class="navbar--input-wrapper__search_icon"
+      alt=""
+      width="30px"
+    />
+  </div>
+
+  <div class="navbar--select-category">
+    <label for="">Categorias</label>
+    <select
+      name="categories"
+      id="categories"
+      (change)="filterBycategory($event.target)"
+      [(ngModel)]="selectedCategory"
+    >
+      <option [value]="" draggable="true">Seleccione</option>
+      @for (category of categories; track $index) {
+      <option [value]="category.strCategory">
+        {{ category.strCategory }}
+      </option>
+      }
+    </select>
+  </div>
+</nav>

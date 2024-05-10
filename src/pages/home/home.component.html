@@ -1,0 +1,13 @@
+@if (signal.category() && signal.isviewRecipes()) {
+<div class="container-cards">
+  <h1>Recetas</h1>
+
+  <app-card-recipes
+    [categorySelected]="signal.category()"
+    [filterLetter]="signal.recipesFilter()"
+  ></app-card-recipes>
+</div>
+}@else{
+
+<app-not-results></app-not-results>
+}
