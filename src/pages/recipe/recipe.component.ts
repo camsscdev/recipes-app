@@ -46,7 +46,7 @@ export class RecipeComponent implements OnInit {
         break;
       }
     }
-    return this.deleteDuplicated(this.ingredients);
+    return this.deleteDuplicated();
   }
 
   addKeyIngredients(meal: { [x: string]: any }, i: string | number) {
@@ -59,7 +59,7 @@ export class RecipeComponent implements OnInit {
     };
   }
 
-  deleteDuplicated(ingredients: any[]) {
+  deleteDuplicated() {
     const uniqueMap = this.ingredients.reduce((acc, word) => {
       acc[word.ingredient] = word;
       return acc;

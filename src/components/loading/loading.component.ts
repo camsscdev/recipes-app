@@ -11,4 +11,6 @@ export class LoadingComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  ngAfterViewInit(): void {}
 }

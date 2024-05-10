@@ -63,9 +63,12 @@ export class NavbarComponent implements OnInit {
 
   searchByName() {
     this.recipesService.filterByName(this.nameRecipe).subscribe(({ meals }) => {
-      if (meals === null) {
-        this.signalService.isviewRecipes.set(false);
+      if (meals) {
+        this.signalService.isviewRecipes.set(true);
+        this.signalService.recipesFilter.set(meals);
         this.redirect();
+      } else {
+        this.signalService.isviewRecipes.set(false);
       }
     });
   }

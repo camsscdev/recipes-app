@@ -1,6 +1,15 @@
 .container-cards {
   background-color: beige;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
   h1 {
     margin: 0;
+    padding: 22px 28px 3px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 28px;
+    padding: 12px 28px 0 28px;
+    text-decoration: underline;
   }
 }
