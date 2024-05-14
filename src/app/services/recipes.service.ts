@@ -1,9 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
+import { environment } from '../../environment/environment';
 import { Categories } from '../models/categories';
 import { Meals } from '../models/meals';
-import { environment } from './../environment/environment';
 
 @Injectable({
   providedIn: 'root',

@@ -5,13 +5,11 @@ export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () =>
-      import('./../pages/home/home.component').then((m) => m.HomeComponent),
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'recipe-details/:id',
     loadComponent: () =>
-      import('./../pages/recipe/recipe.component').then(
-        (m) => m.RecipeComponent
-      ),
+      import('./pages/recipe/recipe.component').then((m) => m.RecipeComponent),
   },
 ];

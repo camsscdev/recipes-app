@@ -7,8 +7,8 @@ import {
   HttpClientModule,
   provideHttpClient,
 } from '@angular/common/http';
-import { LoadingInterceptor } from '../interceptor/loading.interceptor';
 import { routes } from './app.routes';
+import { LoadingInterceptor } from './interceptor/loading.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
