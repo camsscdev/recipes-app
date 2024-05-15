@@ -1,5 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { propertiesMeals } from '../../models/meals';
 import { RecipesService } from '../../services/recipes.service';
@@ -9,7 +10,6 @@ import { RecipesService } from '../../services/recipes.service';
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.scss'],
   standalone: true,
-
   imports: [JsonPipe],
 })
 export class RecipeComponent implements OnInit {
@@ -17,11 +17,14 @@ export class RecipeComponent implements OnInit {
   private route = inject(ActivatedRoute);
   public meals: propertiesMeals[] = [];
   public ingredients: any[] = [];
+  private sanitizer = inject(DomSanitizer);
 
   ngOnInit() {
     this.getParamUrl();
   }
-
+  getSafeYouTubeUrl(youtubeUrl: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(youtubeUrl);
+  }
   getParamUrl() {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
